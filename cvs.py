@@ -6,6 +6,19 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.keys import Keys
 
 
+class Driver:
+    def __init__(self, driver):
+        self.driver = driver
+
+    def create_driver(self):
+        self.driver = webdriver.Chrome('/Users/victoria/Downloads/chromedriver')
+        self.driver.implicitly_wait(10)
+        return self.driver
+
+
+
+
+
 def login(driver):
     url = 'https://www.cvs.com/'
     driver.get(url)
